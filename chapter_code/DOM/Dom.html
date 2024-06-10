@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="p1" name="first_p">My name is sudip ghosh</p><h1 id="h1">My name is Sudip</h1>
+  <div class="div1">
+    <p id = "p2">WLCM TO MY PAGE</p>
+    <h3 id="h3">i am a developer</h3>
+    <div>
+      <p>DOM MANIPULATION</p>
+    </div>
+  </div>
+  <h1 id ="checkVisiblity" style="visibility:hidden">Hidden Div</h1>
+  <div id="box" style="background-color: blue; border: 5px solid black; height:100px; width: 150px;">
+    <P> DIV 1</P>
+  </div>
+  <div id="drink">
+    <ol> Chai</ol>
+    <ol> Milk</ol>
+    <ol> Coffee</ol>
+  </div>
+
+  <script>
+    // console.log(document.querySelector("#p1").tagName);
+    // console.log(document.querySelector("p").firstChild);
+    // console.log(document.querySelector("h1").previousSibling);
+    // console.log(document.querySelector("#div1").innerHTML);//return HTML+text contents 
+    // console.log(document.querySelector("#div1").innerText);//return only text contents
+    // console.log(document.querySelector("#div1").innerHTML="<p> Only div</p>")//runtime manipulation
+    // console.log(document.querySelector("#div1").innerText=" no properities in div"
+    // );
+    // console.log(document.querySelector("#div1").innerText=" no properities in div"
+    // );
+    // console.log(document.querySelector("#checkVisiblity").textContent);//innerText doesn't support hidden elements
+
+
+    // //ATTRIBUTE
+    // //Access id or class name ..getAttribute
+    // let p_Name=document.querySelector("p");
+    // console.log(p_Name.getAttribute("id"));
+    // console.log(p_Name.getAttribute("name"));
+    // let div_Name=document.querySelector("div");
+    // console.log(div_Name.getAttribute("class"));
+
+    // //set id or class name
+    // console.log(div_Name.setAttribute("class","new_class"));
+    
+    // //node.style
+    // let box = document.querySelector("#box");
+    // box.style.backgroundColor = "red";
+
+    // //Insert_elements
+    let newHeading = document.createElement("h1");
+    newHeading.innerHTML="<B> HI I AM SUDIP GHOSH. </B>";
+    document.querySelector("body").prepend(newHeading);//adds at the start of node(inside)
+    document.querySelector("#p1").after(newHeading);//adds after the node(outside)
+    document.querySelector("#h3").before(newHeading);//adds before the node(outside)
+    document.querySelector("body").append(newHeading);//adds at the end of node(inside)
+
+    // // Delete_elements
+    let paragraph = document.querySelector("#p2");
+    paragraph.remove();
+
+    //Append_child & remove_child
+    let drink_List = document.createElement("ol");
+    drink_List.innerText = "Cold drinks";
+    document.querySelector("#drink").appendChild(drink_List);
+    
+    let drink_List1=document.querySelector('#drink');
+    drink_List1.removeChild(drink_List1.firstElementChild);//removes first element
+
+    let drink_List2=document.querySelector('#drink');
+    drink_List2.parentNode.removeChild(drink_List2);//remove the list from its parent
+
+
+
+</script>
+</body>
+</html>
