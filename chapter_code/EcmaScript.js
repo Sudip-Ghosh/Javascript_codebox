@@ -46,7 +46,7 @@ console.log(pallindromeChk("level"));
 //Multiline string --> allows to write multiple line of strings without escape charaters with the help of template strings
 
 
-//Functions
+//Functions in javascript
 function sum(a,b){
   return a+b;
 }
